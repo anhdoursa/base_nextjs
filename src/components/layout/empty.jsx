@@ -1,8 +1,4 @@
-import React from 'react';
-
-export const EmptyLayout = ({children}) => {
-    return (
-        {children}
-    );
-};
-
+import React from "react";
+export function EmptyLayout({ children }) {
+  return <>{children}</>;
+}

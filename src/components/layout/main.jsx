@@ -1,10 +1,12 @@
-import React from 'react';
+import Link from "next/link";
+import React from "react";
 
-export const MainLayout = ({children}) => {
-    return (
-        <div>
-            MainLayout
-            {children}
-        </div>
-    );
-};
+export function MainLayout({ children }) {
+  return (
+    <div>
+      <Link href="/">Home</Link>
+      <Link href="/login">Login</Link>
+      {children}
+    </div>
+  );
+}
