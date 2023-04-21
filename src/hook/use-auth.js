@@ -11,7 +11,7 @@ export function useAuth(options) {
     revalidateOnFocus: false,
     ...options,
   });
-  const firtLoading = profile === undefined && error === undefined;
+  const firstLoading = profile === undefined && error === undefined;
 
   async function login(payload) {
     await authApi.login(payload);
@@ -23,5 +23,5 @@ export function useAuth(options) {
     mutate({}, false);
   }
 
-  return { profile, error, login, logout, firtLoading };
+  return { profile, error, login, logout, firstLoading };
 }

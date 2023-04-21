@@ -1,11 +1,10 @@
-import Link from "next/link";
 import React from "react";
+import { Header } from "../common";
 
 export function MainLayout({ children }) {
   return (
     <div>
-      <Link href="/">Home</Link>
-      <Link href="/login">Login</Link>
+      <Header />
       {children}
     </div>
   );

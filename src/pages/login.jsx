@@ -1,8 +1,9 @@
+import { MainLayout } from "@/components/layout";
 import { useAuth } from "@/hook";
 import React from "react";
 
 export default function LoginPage() {
-  const { profile, login, logout } = useAuth({ revalidateOnMount: true });
+  const { profile, login, logout } = useAuth({ revalidateOnMount: false });
 
   const handleLogin = async () => {
     try {
@@ -33,3 +34,5 @@ export default function LoginPage() {
     </div>
   );
 }
+
+LoginPage.Layout = MainLayout;
