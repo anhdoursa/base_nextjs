@@ -1,10 +1,11 @@
 import React from "react";
+import { Auth } from "../common";
 
 export function AdminLayout({ children }) {
   return (
-    <div>
+    <Auth>
       AdminLayout
       {children}
-    </div>
+    </Auth>
   );
 }
