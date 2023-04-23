@@ -1,5 +1,7 @@
+import { LoginForm } from "@/components/auth";
 import { MainLayout } from "@/components/layout";
 import { useAuth } from "@/hook";
+import { Container } from "@mui/material";
 import React from "react";
 
 export default function LoginPage() {
@@ -21,17 +23,9 @@ export default function LoginPage() {
     }
   };
   return (
-    <div>
-      <h1>LoginPage</h1>
-      <div>Profile: {JSON.stringify(profile)}</div>
-      <div>
-        <button onClick={handleLogin}>Login</button>
-      </div>
-
-      <div>
-        <button onClick={handleLogout}>Logout</button>
-      </div>
-    </div>
+    <Container>
+      <LoginForm />
+    </Container>
   );
 }
 
