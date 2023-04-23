@@ -7,9 +7,10 @@ import React from "react";
 export default function LoginPage() {
   const { profile, login, logout } = useAuth({ revalidateOnMount: false });
 
-  const handleLogin = async () => {
+  const handleLoginSubmit = async (payload) => {
     try {
-      login({ username: "admin", password: "123123" });
+      console.log(payload);
+      login(payload);
     } catch (err) {
       console.log("login error", err);
     }
@@ -24,7 +25,7 @@ export default function LoginPage() {
   };
   return (
     <Container>
-      <LoginForm />
+      <LoginForm handleLoginSubmit={handleLoginSubmit} />
     </Container>
   );
 }
