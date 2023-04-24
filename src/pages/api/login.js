@@ -26,6 +26,16 @@ export default function handler(req, res) {
         body += chunk;
       });
       proxyRes.on("end", function () {
+        const isSuccess =
+          proxyRes.statusCode &&
+          proxyRes.statusCode >= 200 &&
+          proxyRes.statusCode < 300;
+        if (!isSuccess) {
+          resolve(true);
+          return res.status(proxyRes.statusCode).json({
+            error: body,
+          });
+        }
         try {
           const { accessToken, expiredAt } = JSON.parse(body);
           // convert token to cookie

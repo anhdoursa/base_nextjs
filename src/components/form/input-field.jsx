@@ -22,6 +22,8 @@ export function InputField({
       value={value}
       inputRef={ref}
       onChange={onChange}
+      error={!!error}
+      helperText={!!error && error.message}
       onBlur={onBlur}
       {...props}
     />

@@ -5,12 +5,11 @@ import { Container } from "@mui/material";
 import React from "react";
 
 export default function LoginPage() {
-  const { profile, login, logout } = useAuth({ revalidateOnMount: false });
+  const { login, logout } = useAuth({ revalidateOnMount: false });
 
   const handleLoginSubmit = async (payload) => {
     try {
-      console.log(payload);
-      login(payload);
+      await login(payload);
     } catch (err) {
       console.log("login error", err);
     }
@@ -18,7 +17,7 @@ export default function LoginPage() {
 
   const handleLogout = async () => {
     try {
-      logout();
+      await logout();
     } catch (err) {
       console.log("logout error", err);
     }
